@@ -53,11 +53,13 @@ export async function upsertCities(cities) {
 export async function searchCities(query, limit = 3) {
   const [vector] = await embed(query);
 
-  const results = await qdrant.query(COLLECTION_NAME, {
+  const queryResult = await qdrant.query(COLLECTION_NAME, {
     query: vector,
     limit,
     with_payload: true,
   });
+
+  const results = Array.isArray(queryResult) ? queryResult : queryResult.points;
 
   return results.map((result) => ({
     score: result.score,
