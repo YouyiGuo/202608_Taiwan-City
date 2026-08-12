@@ -1,0 +1,22 @@
+{
+  "name": "homework3",
+  "version": "0.1.0",
+  "description": "AI Agent 作業 3：建立迷你知識庫",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "init": "node src/scripts/init-knowledge-base.js",
+    "search": "node src/main.js",
+    "test": "node src/scripts/search-test.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.4.3",
+    "@qdrant/js-client-rest": "^1.18.0",
+    "dotenv": "^17.4.2",
+    "openai": "^6.38.0",
+    "ora": "^9.4.0"
+  }
+}
